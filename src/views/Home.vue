@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <SiteHero />
     <AboutUs />
     <RecentWorks />
@@ -11,7 +10,6 @@
 </template>
 
 <script>
-  import Header from '@/components/Header.vue';
   import SiteHero from '@/components/SiteHero.vue';
   import AboutUs from '@/components/AboutUs.vue';
   import RecentWorks from '@/components/RecentWorks.vue';
@@ -22,7 +20,6 @@
   export default {
     name: 'Home',
     components: {
-      Header,
       SiteHero,
       AboutUs,
       RecentWorks,
