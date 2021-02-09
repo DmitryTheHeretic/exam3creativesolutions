@@ -1,7 +1,7 @@
 <template>
     <div class="site-hero">
         <div class="container">
-            <div class="header-wrapper">
+            <div class="header-inner">
                 <router-link to="/" class="header-logo">
                     <svg 
                         xmlns="http://www.w3.org/2000/svg"
@@ -12,23 +12,32 @@
                     </svg>
                 </router-link>
 
-                <ul class="header-menu__list">
-                    <li class="header-menu__item">
-                        <a href="" class="header-menu__link">Home</a>
-                    </li>
-                    <li class="header-menu__item">
-                        <a href="" class="header-menu__link">About</a>
-                    </li>
-                    <li class="header-menu__item">
-                        <a href="" class="header-menu__link">Services</a>
-                    </li>
-                    <li class="header-menu__item">
-                        <a href="" class="header-menu__link">Work</a>
-                    </li>
-                    <li class="header-menu__item">
-                        <a href="" class="header-menu__link">Contact</a>
-                    </li>
-                </ul>
+                <nav class="menu header-menu">    
+                    <input id="menu__toggle" type="checkbox">
+                    <label class="menu__btn" for="menu__toggle">
+                        <span class="open-menu__stroke open-menu__stroke--one"></span>
+                        <span class="open-menu__stroke open-menu__stroke--two"></span>
+                        <span class="open-menu__stroke open-menu__stroke--three"></span>
+                    </label>
+
+                    <ul class="header-menu__list">
+                        <li class="header-menu__item">
+                            <a href="" class="header-menu__link">Home</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="" class="header-menu__link">About</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="" class="header-menu__link">Services</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="" class="header-menu__link">Work</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="" class="header-menu__link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
             
             <h1 class="page-main-title">
@@ -56,7 +65,7 @@ export default {
         padding-right: 15px;
     }
 
-    .header-wrapper{
+    .header-inner{
     
         display: flex;
         justify-content: space-between;
@@ -68,17 +77,116 @@ export default {
     .header-menu__list {
         display: flex;
         flex-wrap: wrap;
-    }  
+    }
 
     .header-menu__item{
         margin-left:20px;
-    }
+    }   
 
     .header-menu__link{
         font-family: ProximaNova;
         font-size: 24px;
         font-weight: 600;
         color: #ffffff;
+        position: relative;
+    }
+
+    .header-menu__link::before {
+    background: #ffffff;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 50%;
+    height: 1px;
+    opacity: 0;
+    transition: .2s ease-in-out;
+    }
+
+    .header-menu__link:hover::before {
+        top: -5px;
+        opacity: 1;
+    }
+
+    #menu__toggle {
+	display: none;
+    }
+
+    #menu__toggle:checked ~ .menu__btn > span {
+        transform: rotate(45deg);
+    }
+
+    #menu__toggle:checked ~ .menu__btn > span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+    
+    #menu__toggle:checked ~ .menu__btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    
+    #menu__toggle:checked ~ .header-menu__list {
+        display: block;
+    }
+
+    @media screen and (max-width: 768px) {
+        .menu__btn {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            width: 46px;
+            height: 46px;
+            cursor: pointer;
+            z-index: 6;
+        }
+        
+        .menu__btn > span,.menu__btn > span::before,.menu__btn > span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            transition-duration: .25s;
+        }
+        
+        .menu__btn > span::before {
+            content: '';
+            top: -8px;
+        }
+        
+        .menu__btn > span::after {
+            content: '';
+            top: 8px;
+        }
+
+        .header-menu__list {
+            position: absolute;
+            top: -20px;
+            right: 0px;
+            display: none;
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: #9f9acf;
+            text-align: center;
+            z-index: 5;
+        }
+
+        .header-menu__item{
+            margin-top: 35px;
+            padding: 10px 0 25px 0;
+        }
+        
+        .header-menu__link {
+            font-size: 20px;
+        }
+
+        .header-logo{
+            z-index: 20;
+        }
     }
 
     .site-hero{

@@ -49,7 +49,7 @@
   height: 100%;
 	display: flex;
   flex-direction: column;
-}
+  }
   
   ul li {
     list-style: none;
@@ -57,7 +57,23 @@
 
   a {
     text-decoration: none;
-  } 
+  }
+  
+  a.link:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover, a:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
 
   ul.list li{
 	list-style: none;

@@ -20,6 +20,10 @@
                     <div class="recent-works__carousel-card">
                         <img src="../assets/Recent-Works-Card2.png" alt="">
                     </div>
+
+                    <div class="recent-works__carousel-card">
+                        <img src="../assets/Recent-Works-Card3.png" alt="">
+                    </div>
                 </VueSlickCarousel>
             </div>
 
@@ -77,16 +81,13 @@ export default {
     .recent-works__carousel{
         padding-top: 68px;
         padding-bottom: 105px;
+        margin-left: 50px;
+        margin-right: 50px;
     }
 
     .recent-works__carousel-card{
-        max-width: 730px;
-    }
-    
-    .slick-slider {
-        text-align: center;
+        margin-left: 18%;
         max-height: 546px;
-        overflow: hidden;
     }
 
     .slick-prev {

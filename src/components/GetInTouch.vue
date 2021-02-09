@@ -56,11 +56,13 @@
                     </div>
                 </div>
                 <transition class="contact__link-info" name="slide">
-                    <p v-if="show" class="contact__link-info-adress">
-                        Ikan Piranha Atas 220CБ<br>
-                        Malang - East Java<br>
-                        Indonesia
-                    </p>
+                    <div class="contact__link-info-adress">    
+                        <p v-if="show" >
+                            Ikan Piranha Atas 220CБ<br>
+                            Malang - East Java<br>
+                            Indonesia
+                        </p>
+                    </div>
                 </transition>
             </div>
             <div id="contact__link-phone" class="contact-link">
@@ -75,11 +77,13 @@
                     </div>
                 </div>
                 <transition class="contact__link-info" name="slide">
-                    <p v-if="show" class="contact__link-info-phone">
-                        Ikan Piranha Atas 220CБ<br>
-                        Malang - East Java<br>
-                        Indonesia
-                    </p>
+                    <div class="contact__link-info-phone">  
+                        <p v-if="show" >
+                            Ikan Piranha Atas 220CБ<br>
+                            Malang - East Java<br>
+                            Indonesia
+                        </p>
+                    </div>  
                 </transition>    
             </div>    
             
@@ -113,13 +117,7 @@ export default {
             
         }
         
-    },
-    /* el: '#contact__link-phone',
-    data: function () {
-        return {
-            show: false
-        }
-    }  */   
+    }  
 }
 </script>
 
@@ -235,12 +233,10 @@ export default {
 
     .slide-enter,
     .fade-leave-to{
-        transform: translateX(10px);
+        transform: translateX(1000px);
     }
 
-    .contact__link-button{
-        right: 200px;
-    }
+    
 
     .contact__link-icon{
         background-color: #9f9acf;
@@ -266,6 +262,8 @@ export default {
 
     .contact__link-info-adress{
         margin: 17px 42px 17px 42px;
+        background-color: #ebebeb;
+        opacity: 0.5;
         
     }
 

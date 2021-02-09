@@ -13,15 +13,15 @@
 
             <div class="our-team__carousel">
                 <VueSlickCarousel v-bind="settings" class="our-team__slider">
-                   <div class="slide-card">
+                    <div class="slide-card" :key="card.name" v-for="card in ourTeamCards" >
                         <div class="slide-card__inner">
-                            <img src="../assets/Team-memb1.png" alt="">
+                            <img :src="card.photo" />
                             
                             <p class="slide-card__text-name">
-                                Miguel Obrien
+                                {{card.name}}
                             </p>
                             <p class="slide-card__text-position">
-                                CEO & Founder
+                                {{card.position}}
                             </p>
                         </div>    
                         
@@ -115,14 +115,14 @@
                         </div>
                     </div>
 
-                    <div class="slide-card">
+                    <div class="slide-card" :key="card.name" v-for="card in ourTeamCards">
                         <div class="slide-card__inner">
-                            <img src="../assets/Team-memb2.png" alt="">
+                            <img :src="card.photo" />
                             <p class="slide-card__text-name">
-                                Jackie Carroll
+                                {{card.name}}
                             </p>
                             <p class="slide-card__text-position">
-                                Art Director
+                                {{card.position}}
                             </p>
                         </div>
                         
@@ -237,14 +237,14 @@
                         </div>
                     </div>
 
-                    <div class="slide-card">
+                    <div class="slide-card"  :key="card.name" v-for="card in ourTeamCards">
                         <div class="slide-card__inner">
-                            <img src="../assets/Team-memb3.png" alt="">
+                            <img :src="card.photo" />
                             <p class="slide-card__text-name">
-                                Ida Morrison
+                                {{card.name}}
                             </p>
                             <p class="slide-card__text-position">
-                                Designer
+                                {{card.position}}
                             </p>
                         </div>
                         
@@ -359,14 +359,14 @@
                         </div>
                     </div>
 
-                    <div class="slide-card">
+                    <div class="slide-card" :key="card.name" v-for="card in ourTeamCards">
                         <div class="slide-card__inner">
-                            <img src="../assets/Team-memb4.png" alt="">
+                            <img :src="card.photo" />
                             <p class="slide-card__text-name">
-                                Jeremy Clarkson
+                                {{card.name}}
                             </p>
                             <p class="slide-card__text-position">
-                                Big orang
+                                {{card.position}}
                             </p>
                         </div>
                         
@@ -481,14 +481,14 @@
                         </div>
                     </div>
 
-                    <div class="slide-card">
+                    <div class="slide-card" :key="card.name" v-for="card in ourTeamCards">
                         <div class="slide-card__inner">
-                            <img src="../assets/Team-memb5.png" alt="">
+                            <img :src="card.photo" />
                             <p class="slide-card__text-name">
-                                        Richard Hammond
+                                    {{card.name}}
                                 </p>
                                 <p class="slide-card__text-position">
-                                    Hamster
+                                    {{card.position}}
                                 </p>
                         </div>
                         
@@ -603,15 +603,15 @@
                         </div>
                     </div>
 
-                    <div class="slide-card">
+                    <div class="slide-card" :key="card.name" v-for="card in ourTeamCards">
                         <div class="slide-card__inner">
-                            <img src="../assets/Team-memb6.png" alt="">
+                            <img :src="card.photo" />
                             
                             <p class="slide-card__text-name">
-                                James May
+                                {{card.name}}
                             </p>
                             <p class="slide-card__text-position">
-                                Captain Slow
+                                {{card.position}}
                             </p>
                         </div>    
                         
@@ -736,27 +736,69 @@
     import VueSlickCarousel from 'vue-slick-carousel'
     import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
     import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-export default {
-    name: 'MyComponent',
-    components: { VueSlickCarousel },
-    data () {
-        return {
-            settings: {
-            "dots": true,
-            "focusOnSelect": true,
-            "infinite": true,
-            "speed": 500,
-            "slidesToShow": 3,
-            "slidesToScroll": 1,
-            "touchThreshold": 5,
-            "adaptiveHeight": true
-            }   
+    export default {
+        name: 'MyComponent',
+        components: { VueSlickCarousel },
+        data () {
+            return {
+                settings: {
+                    "dots": false,
+                    "focusOnSelect": true,
+                    "speed": 500,
+                    "slidesToShow": 3,
+                    "slidesToScroll": 1,
+                    "touchThreshold": 5,
+                    "adaptiveHeight": true,
+                    "responsive": [
+                        {
+                            "breakpoint": 1300,
+                            "settings": {
+                                "focusOnSelect": true,
+                                "speed": 500,
+                                "slidesToShow": 2,
+                                "slidesToScroll": 1,
+                                "touchThreshold": 5,
+                                "adaptiveHeight": true,
+                            }
+                        }
+                    ]
+                },
+                ourTeamCards: [
+                    {
+                        photo:require('../assets/Team-memb1.png'),
+                        name:'Miguel Obrien',
+                        position: 'CEO & Founder'  
+                    },
+                    {
+                        photo:require('../assets/Team-memb2.png'),
+                        name:'Jackie Carroll',
+                        position: 'Art Director'
+                    },
+                    {
+                        photo:require('../assets/Team-memb3.png'),
+                        name:'Ida Morrison',
+                        position: 'Designer'
+                    },
+                    {
+                        photo:require('../assets/Team-memb4.png'),
+                        name:'Jeremy Clarkson',
+                        position: 'Big orang'
+                    },
+                    {
+                        photo:require('../assets/Team-memb5.png'),
+                        name:'Richard Hammond',
+                        position: 'Hamster'
+                    },
+                    {
+                        photo:require('../assets/Team-memb6.png'),
+                        name:'James May',
+                        position: 'Captain Slow'
+                    }
+                ]   
+            }
         }
     }
     
-
-
-}
 </script>
 
 <style>
@@ -769,6 +811,11 @@ export default {
         display: flex;
         align-items: center;
         flex-direction: column;
+    }
+    
+    .our-team__carousel{
+        margin-left: 50px;
+        margin-right: 50px;
     }
 
     .our-team__title{
@@ -789,8 +836,8 @@ export default {
 
     .slide-card__inner img{
         position: absolute;
-        top: -40%;
-        left: 16%;
+        top: -45%;
+        left: 13%;
         width: 238px;
     }
 
@@ -824,6 +871,17 @@ export default {
 
     .slide-card__social-item{
         padding-left: 25px;
+    } 
+
+    @media screen and (max-width: 1300px) {
+        .slide-card__inner {
+        margin: 150px 80px 0 80px;
+        }
+
+        .slide-card__socials{
+            margin-left: 80px;
+            margin-right: 80px;
+        }
     }
 </style>>
     

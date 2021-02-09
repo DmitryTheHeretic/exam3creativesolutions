@@ -238,4 +238,11 @@ export default {
     .card-big{
         background: url(../assets/Card-big-back.png);
     }
+
+    @media screen and (max-width: 1062px){
+        .aboutus__content{
+        padding-left: 40px;
+    }
+        
+    }
 </style>
