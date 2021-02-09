@@ -319,5 +319,81 @@ export default {
         background-color: #9f9acf;
         opacity: 0.7;
         padding: 30px 24px 24px 24px;
-    } 
+    }
+    
+    @media screen and (max-width: 1024px) {
+        .get-in-touch__form-header {
+            margin-bottom: 100px;
+        }
+
+        .form-input__datas{
+            display: flex;
+            flex-direction: column;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .form-input__datas input{
+            margin-bottom: 30px;
+        }
+
+        .form-input__name{
+           margin-right: 0; 
+        }
+
+        .form-input__email{
+            margin-left: 0; 
+        }
+        
+        .form-input-text{
+            margin: 0 40px 55px 40px ;
+        }
+
+        .form-input-text textarea{
+           padding: 24px 685px 0 20px; 
+        }
+
+        .contact__links {
+            top: 100px;
+        }
+    }
+    
+    
+    
+    /* @media screen and (max-width: 992px) {
+        .get-in-touch__form-header {
+            margin-bottom: 100px;
+        }
+        
+        .form-input__datas{
+            display: flex;
+            flex-direction: column;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .form-input__datas input{
+            margin-bottom: 30px;
+        }
+
+        .form-input__name{
+           margin-right: 0; 
+        }
+
+        .form-input__email{
+            margin-left: 0; 
+        }
+        
+        .form-input-text{
+            margin: 0 40px 55px 40px ;
+        }
+
+        .form-input-text textarea{
+           padding: 24px 620px 0 20px; 
+        }
+
+        .contact__links {
+            top: 100px;
+        }
+    } */
 </style>

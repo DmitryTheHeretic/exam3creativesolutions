@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.a2e9430bde68bcb15352c2dbe9ffb2b4.js"
+  "/precache-manifest.124d943768d66fd158527ac5bb4b58fa.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "exam3creativesolutions"});
