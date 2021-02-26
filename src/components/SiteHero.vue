@@ -1,5 +1,5 @@
 <template>
-    <div class="site-hero">
+    <div id="home" class="site-hero">
         <div class="container">
             <div class="header-inner">
                 <router-link to="/" class="header-logo">
@@ -22,19 +22,19 @@
 
                     <ul class="header-menu__list">
                         <li class="header-menu__item">
-                            <a href="" class="header-menu__link">Home</a>
+                            <a href="#home" class="header-menu__link">Home</a>
                         </li>
                         <li class="header-menu__item">
-                            <a href="" class="header-menu__link">About</a>
+                            <a href="#aboutus" class="header-menu__link">About</a>
                         </li>
                         <li class="header-menu__item">
-                            <a href="" class="header-menu__link">Services</a>
+                            <a href="#services" class="header-menu__link">Services</a>
                         </li>
                         <li class="header-menu__item">
-                            <a href="" class="header-menu__link">Work</a>
+                            <a href="#recent-works" class="header-menu__link">Work</a>
                         </li>
                         <li class="header-menu__item">
-                            <a href="" class="header-menu__link">Contact</a>
+                            <a href="#get-in-touch" class="header-menu__link">Contact</a>
                         </li>
                     </ul>
                 </nav>

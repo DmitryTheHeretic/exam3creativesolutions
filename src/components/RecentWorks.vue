@@ -1,5 +1,5 @@
 <template>
-    <div class="recent-works">
+    <div id="recent-works" class="recent-works">
         <div class="container">
             <div class="recent-works__header">
                 <svg class="recent-works-logo"

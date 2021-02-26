@@ -1,5 +1,5 @@
 <template>
-    <div class="aboutus">
+    <div id="aboutus" class="aboutus">
         <div class="container">
             <div class="aboutus__inner">
                 <div class="aboutus__img">
@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <div class="aboutus__cards grid-container">
+            <div id="services" class="aboutus__cards grid-container">
                     <div class="aboutus__card card-1 card-grey">
                         <svg class="card__icon"
                             xmlns="http://www.w3.org/2000/svg"

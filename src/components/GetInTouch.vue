@@ -15,7 +15,7 @@
             />
         </GmapMap>
 
-        <div class="get-in-touch__form">
+        <div id="get-in-touch" class="get-in-touch__form">
             <div class="get-in-touch__form-inner">
                 <div class="get-in-touch__form-header">
                     <svg class="get-in-touch__icon"
