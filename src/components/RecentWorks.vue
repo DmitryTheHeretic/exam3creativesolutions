@@ -99,7 +99,7 @@ export default {
     }
 
     .recent-works__button{
-        margin-left: 45%;
+        margin-left: 42%;
         padding: 18px 52px 18px 52px;
         border: solid 1px #ffffff;
         background-color: transparent;
